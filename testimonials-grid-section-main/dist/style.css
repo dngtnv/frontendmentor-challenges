@@ -52,6 +52,12 @@ body main .testimonials .box, body main .testimonials .testim-box1, body main .t
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: 0 3px 10px #cccccc;
+          box-shadow: 0 3px 10px #cccccc;
+}
+
+body main .testimonials .box .avatar, body main .testimonials .testim-box1 .avatar, body main .testimonials .testim-box2 .avatar, body main .testimonials .testim-box3 .avatar, body main .testimonials .testim-box4 .avatar, body main .testimonials .testim-box5 .avatar {
+  border: 2px solid #a775f1;
 }
 
 body main .testimonials .box .testim-box-header, body main .testimonials .testim-box1 .testim-box-header, body main .testimonials .testim-box2 .testim-box-header, body main .testimonials .testim-box3 .testim-box-header, body main .testimonials .testim-box4 .testim-box-header, body main .testimonials .testim-box5 .testim-box-header {
@@ -71,7 +77,7 @@ body main .testimonials .box .testim-box-header, body main .testimonials .testim
 }
 
 body main .testimonials .box .testim-box-header img, body main .testimonials .testim-box1 .testim-box-header img, body main .testimonials .testim-box2 .testim-box-header img, body main .testimonials .testim-box3 .testim-box-header img, body main .testimonials .testim-box4 .testim-box-header img, body main .testimonials .testim-box5 .testim-box-header img {
-  width: 30px;
+  width: 40px;
   height: auto;
   border-radius: 50%;
   margin-right: 15px;
@@ -119,10 +125,6 @@ body main .testimonials .testim-box1 {
   z-index: 1;
 }
 
-body main .testimonials .testim-box1 .avatar {
-  border: 2px solid #a775f1;
-}
-
 body main .testimonials .testim-box1 #pattern {
   position: absolute;
   top: 0;
@@ -153,10 +155,6 @@ body main .testimonials .testim-box4 {
   grid-area: box4;
   background-color: #19212e;
   color: white;
-}
-
-body main .testimonials .testim-box4 .avatar {
-  border: 2px solid #a775f1;
 }
 
 body main .testimonials .testim-box5 {
