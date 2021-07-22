@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: Update later
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/testimonials-grid-section-using-css-grid-and-scss-JmmkB8Oiu)
+- Live Site URL: [Live](https://testimonials-cssgrid-challenge.vercel.app/)
 
 ## My process
 
