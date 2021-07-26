@@ -126,7 +126,6 @@ body {
       margin: 50px auto;
       .testimonials {
         width: 70%;
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
@@ -176,7 +175,6 @@ body {
       margin: 50px auto;
       .testimonials {
         width: 70%;
-        display: grid;
         grid-template-columns: 3fr;
         grid-template-rows: 0.9fr 0.5fr 0.5fr 0.9fr 1fr;
         grid-template-areas:
