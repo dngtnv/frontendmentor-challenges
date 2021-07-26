@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: Update later
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/social-media-dashboard-using-scss-css-grid-and-js-X80X_rHBR)
 - Live Site URL: [Live](https://frontendmentor-challenges-dngtnv.vercel.app/)
 
 ## My process
