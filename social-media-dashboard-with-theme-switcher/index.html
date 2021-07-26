@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <title>Frontend Mentor | Social Media Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="top-bar container">
+          <div class="left-side">
+            <h1>Social Media Dashboard</h1>
+            <b class="gray-blue">Total Followers: 23,004</b>
+          </div>
+          <div class="right-side">
+            <b class="gray-blue">Dark Mode</b>
+            <label class="switch">
+              <input id="theme-switch" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+      <div class="main-cards">
+        <section class="social-media container">
+          <div class="facebook card">
+            <p class="user-id"><img src="./images/icon-facebook.svg" alt="facebook" />@nathanf</p>
+            <p class="stats">1987</p>
+            <p class="followers">followers</p>
+            <p class="increase">12 Today</p>
+          </div>
+          <div class="twitter card">
+            <p class="user-id"><img src="./images/icon-twitter.svg" alt="twitter" />@nathanf</p>
+            <p class="stats">1044</p>
+            <p class="followers">followers</p>
+            <p class="increase">99 Today</p>
+          </div>
+          <div class="instagram card">
+            <p class="user-id"><img src="./images/icon-instagram.svg" alt="instagram" />@realnathanf</p>
+            <p class="stats">11k</p>
+            <p class="followers">followers</p>
+            <p class="increase">1099 Today</p>
+          </div>
+          <div class="youtube card">
+            <p class="user-id"><img src="./images/icon-youtube.svg" alt="youtube" />Nathan F.</p>
+            <p class="stats">8239</p>
+            <p class="followers">Subscribers</p>
+            <p class="decrease">144 Today</p>
+          </div>
+        </section>
+        <section class="overview-today container">
+          <h2>Overview - Today</h2>
+          <div class="overview-card">
+            <div class="fb-page-views card">
+              <h3>Page Views</h3>
+              <img src="./images/icon-facebook.svg" alt="facebook" class="icon" />
+              <div class="stats">87</div>
+              <div class="increase">3%</div>
+            </div>
+            <div class="fb-likes card">
+              <h3>Likes</h3>
+              <img src="./images/icon-facebook.svg" alt="facebook" class="icon" />
+              <div class="stats">52</div>
+              <div class="decrease">2%</div>
+            </div>
+            <div class="ig-likes card">
+              <h3>Likes</h3>
+              <img src="./images/icon-instagram.svg" alt="instagram" class="icon" />
+              <div class="stats">5462</div>
+              <div class="increase">2257%</div>
+            </div>
+            <div class="ig-profile-views card">
+              <h3>Profile Views</h3>
+              <img src="./images/icon-instagram.svg" alt="instagram" class="icon" />
+              <div class="stats">52k</div>
+              <div class="increase">1375%</div>
+            </div>
+            <div class="tw-retweets card">
+              <h3>Retweets</h3>
+              <img src="./images/icon-twitter.svg" alt="twitter" class="icon" />
+              <div class="stats">117</div>
+              <div class="increase">303%</div>
+            </div>
+            <div class="tw-likes card">
+              <h3>Likes</h3>
+              <img src="./images/icon-twitter.svg" alt="twitter" class="icon" />
+              <div class="stats">507</div>
+              <div class="increase">553%</div>
+            </div>
+            <div class="yt-likes card">
+              <h3>Likes</h3>
+              <img src="./images/icon-youtube.svg" alt="youtube" class="icon" />
+              <div class="stats">107</div>
+              <div class="decrease">19%</div>
+            </div>
+            <div class="yt-total-views card">
+              <h3>Total Views</h3>
+              <img src="./images/icon-youtube.svg" alt="youtube" class="icon" />
+              <div class="stats">1407</div>
+              <div class="decrease">12%</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://github.com/dngtnv">Dngtnv</a>.
+    </div>
+    <script src="./script/index.js"></script>
+  </body>
+</html>

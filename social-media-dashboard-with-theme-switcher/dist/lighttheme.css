@@ -1,0 +1,44 @@
+body.light-theme {
+  background-color: white;
+}
+
+body.light-theme .attribution {
+  color: #1e202a;
+}
+
+body.light-theme header {
+  background-color: #f5f7ff;
+}
+
+body.light-theme header .gray-blue {
+  color: #63687e;
+}
+
+body.light-theme header .left-side {
+  color: #1e202a;
+}
+
+body.light-theme header .right-side {
+  color: #63687e;
+}
+
+body.light-theme header .slider::before {
+  background-color: #fff;
+}
+
+body.light-theme .card {
+  background-color: #f0f2fa;
+}
+
+body.light-theme .card #user-id {
+  color: #63687e;
+}
+
+body.light-theme .card .stats {
+  color: #1e202a;
+}
+
+body.light-theme .card .followers {
+  color: #63687e;
+}
+/*# sourceMappingURL=lighttheme.css.map */
