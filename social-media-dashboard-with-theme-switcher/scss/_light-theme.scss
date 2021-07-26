@@ -1,0 +1,72 @@
+// Light-theme
+$body-bg-light: hsl(0, 0%, 100%);
+$top-bg-light: hsl(225, 100%, 98%);
+$card-bg-light: hsl(227, 47%, 96%);
+$primary-text-light: hsl(230, 17%, 14%);
+$secondary-text-light: hsl(228, 12%, 44%);
+
+body.light-theme {
+  background-color: $body-bg-light;
+  transition: background-color 0.4s linear;
+  .attribution {
+    color: $primary-text-light;
+  }
+  header {
+    transition: background-color 0.4s linear;
+    background-color: $top-bg-light;
+    .gray-blue {
+      color: $secondary-text-light;
+    }
+    .left-side {
+      color: $primary-text-light;
+    }
+    .right-side {
+      color: $secondary-text-light;
+      .switch {
+        .slider {
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .main-cards {
+    .social-media {
+      .card {
+        background-color: $card-bg-light;
+        &:hover {
+          background-color: #e1e3f0;
+        }
+        .user-id {
+          color: $secondary-text-light;
+        }
+        .stats {
+          color: $primary-text-light;
+        }
+        .followers {
+          color: $secondary-text-light;
+        }
+      }
+    }
+    .overview-today {
+      h2 {
+        color: $secondary-text-light;
+      }
+      .overview-card {
+        .card {
+          background-color: $card-bg-light;
+          h3 {
+            color: $secondary-text-light;
+          }
+          .stats {
+            color: $primary-text-light;
+          }
+          &:hover {
+            background-color: #e1e3f0;
+          }
+        }
+      }
+    }
+  }
+}
