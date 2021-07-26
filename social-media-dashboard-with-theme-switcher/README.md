@@ -25,11 +25,12 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
+![](./light-theme.jpg)
 
 ### Links
 
 - Solution URL: Update later
-- Live Site URL: Update later
+- Live Site URL: [Live](https://frontendmentor-challenges-dngtnv.vercel.app/)
 
 ## My process
 
