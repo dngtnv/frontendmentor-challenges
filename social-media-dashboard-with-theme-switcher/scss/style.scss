@@ -298,8 +298,10 @@ header {
   }
   .main-cards {
     top: -80px;
-    margin-top: 10px;
+    margin-top: 55px;
     .social-media {
+      margin-top: 40px;
+      padding-top: 0;
       grid-template-columns: 1fr;
       grid-template-areas:
         'fb'
