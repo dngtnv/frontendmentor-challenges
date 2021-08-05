@@ -1,0 +1,83 @@
+.footer {
+  background-color: var(--dark-blue);
+  .footer-wrapper {
+    text-align: center;
+    @media (min-width: 64em) {
+      text-align: left;
+      display: grid;
+      grid-template-columns: 2fr repeat(2, 1fr) 4fr;
+      grid-template-rows: 1fr auto;
+      column-gap: 25px;
+      grid-template-areas:
+        'logo links1 links2 btn'
+        'icons links1 links2 copyright';
+    }
+    .footer-logo {
+      @media (min-width: 64em) {
+        grid-area: logo;
+      }
+      img {
+        margin-bottom: 20px;
+        @media (min-width: 64em) {
+          margin-top: 10px;
+        }
+      }
+    }
+    .social-icons {
+      margin-bottom: 20px;
+      @media (min-width: 64em) {
+        grid-area: icons;
+        justify-self: start;
+        align-self: center;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        li {
+          padding: 0 7px;
+          a:hover svg path {
+            fill: var(--lime-green);
+          }
+        }
+      }
+    }
+    .footer-links {
+      &.column1 {
+        @media (min-width: 64em) {
+          grid-area: links1;
+        }
+      }
+      &.column2 {
+        @media (min-width: 64em) {
+          grid-area: links2;
+        }
+      }
+      a {
+        line-height: 2.5;
+        &:hover {
+          color: var(--lime-green);
+        }
+      }
+    }
+    .footer-btn {
+      margin: 20px 0;
+      @media (min-width: 64em) {
+        grid-area: btn;
+        justify-self: end;
+      }
+    }
+    .footer-copyright {
+      @media (min-width: 64em) {
+        grid-area: copyright;
+        justify-self: end;
+      }
+      p {
+        @media (min-width: 64em) {
+          font-size: 0.8rem;
+        }
+      }
+      margin: 20px 0;
+    }
+  }
+}
