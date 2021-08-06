@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Link]
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/easybank-landing-page-using-scss-and-flexbox-mH489SK30)
 - Live Site URL: [Live](https://easybank-landing-page-dngtnv.vercel.app/)
 
 ## My process
