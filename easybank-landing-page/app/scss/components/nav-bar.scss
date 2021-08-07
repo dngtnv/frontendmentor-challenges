@@ -10,6 +10,9 @@ header {
     &.open {
       .overlay {
         display: block;
+        @media (min-width: 64em) {
+          display: none;
+        }
       }
       .header-toggle {
         > span:first-child {
@@ -102,6 +105,9 @@ header {
     transform: translateX(-50%);
     &.invisible-element {
       visibility: hidden;
+    }
+    @media (min-width: 64em) {
+      display: none;
     }
     ul {
       padding: 0;
