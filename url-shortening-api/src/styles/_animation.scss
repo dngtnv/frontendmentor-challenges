@@ -1,0 +1,37 @@
+.slide-up {
+  animation: menuClose 0.4s ease forwards;
+}
+.slide-down {
+  animation: menuOpen 0.4s ease;
+}
+@keyframes menuOpen {
+  from {
+    visibility: hidden;
+    margin-top: 0.5rem;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    margin-top: 1.25rem;
+    opacity: 1;
+  }
+}
+@keyframes menuClose {
+  from {
+    visibility: visible;
+    margin-top: 1.25rem;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    margin-top: 0.5rem;
+    opacity: 0;
+  }
+}
