@@ -1,0 +1,26 @@
+@use 'colors' as *;
+
+.started-btn {
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.688rem 2.688rem;
+  background-color: $cyan;
+  border-radius: 50px;
+  color: #fff;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: inherit;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}

@@ -4,7 +4,7 @@ import Nav from './Navigation';
 
 function Header() {
   return (
-    <header className="container container-pd-y-nav">
+    <header className="container container-pd-nav">
       <Nav />
     </header>
   );

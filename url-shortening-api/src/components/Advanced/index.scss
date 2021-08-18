@@ -1,0 +1,171 @@
+@use '../../styles/colors' as *;
+
+.adv {
+  background-color: #eff1f7;
+  .adv-section {
+    .shorten-form {
+      display: flex;
+      flex-direction: column;
+      background: $dark-violet url('../../images/bg-shorten-mobile.svg') no-repeat;
+      background-position: right top;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transform: translateY(-85px);
+      @media (min-width: 40em) {
+        background-image: url('../../images/bg-shorten-desktop.svg');
+        background-size: cover;
+      }
+      @media (min-width: 64em) {
+        flex-direction: row;
+        padding: 3.3rem 3.5rem;
+      }
+      input {
+        font-family: inherit;
+        font-size: 1rem;
+        border: 1px solid rgba($color: #fff, $alpha: 0.5%);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 0.8rem 1rem;
+        outline: none;
+        border: 3px solid rgb(255, 255, 255);
+        &:focus {
+          border: 3px solid $cyan;
+        }
+        @media (min-width: 64em) {
+          flex: 4;
+          font-size: 1.125rem;
+          margin-bottom: 0;
+          margin-right: 1rem;
+          padding: 1rem 1.5rem;
+        }
+      }
+      .shortening-btn {
+        position: relative;
+        font-family: inherit;
+        font-size: 1.063rem;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 8px;
+        padding: 0.8rem 1rem;
+        border: none;
+        background-color: $cyan;
+        cursor: pointer;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: inherit;
+          background-color: rgba(255, 255, 255, 0.4);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
+        @media (min-width: 64em) {
+          flex: 1;
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+
+//-------Advanced statistics-------
+
+.adv-statistics {
+  .descr {
+    text-align: center;
+    p {
+      line-height: 1.6;
+      @media (min-width: 64em) {
+        max-width: 32rem;
+        margin: 0 auto;
+        font-size: 18px;
+      }
+    }
+  }
+  .adv-cards {
+    position: relative;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 0.5rem;
+      height: 100%;
+      background-color: $cyan;
+      left: 50%;
+      transform: translateX(-50%);
+      @media (min-width: 64em) {
+        height: 0.5rem;
+        width: 100%;
+        top: 55%;
+        left: 0;
+        transform: translateY(-55%);
+        //transform: rotate(90deg);
+      }
+    }
+    @media (min-width: 64em) {
+      display: flex;
+      gap: 2rem;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 4rem 1.5rem 1.5rem 1.5rem;
+      //margin: 5.5rem 0;
+      transition: all 0.4s ease;
+      margin-bottom: 5.5rem;
+      @media (min-width: 64em) {
+        align-items: flex-start;
+        text-align: left;
+        width: calc(100% / 3);
+        padding: 4rem 2rem 2rem 2rem;
+      }
+      .card-icon {
+        position: absolute;
+        background-color: $dark-violet;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -2.625rem;
+        left: 50%;
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+        @media (min-width: 64em) {
+          left: 4.7rem;
+        }
+      }
+      h3 {
+        font-size: 1.438rem;
+      }
+      p {
+        margin: 9px 0;
+        line-height: 1.6rem;
+      }
+    }
+    .detailed {
+      @media (min-width: 64em) {
+        transform: translateY(2.625rem);
+      }
+    }
+    .fully {
+      @media (min-width: 64em) {
+        transform: translateY(5.25rem);
+      }
+    }
+  }
+}

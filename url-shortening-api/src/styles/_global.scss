@@ -1,6 +1,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -16,18 +17,40 @@ body {
   font-weight: 500;
   overflow-x: hidden;
 }
+
 .container {
   max-width: 80rem;
   margin: 0 auto;
-  $pd-lf: 1.563rem;
+  $pd-lr: 1.563rem;
   transition: all 0.4s ease;
-  &-pd-y-nav {
-    padding: 2rem $pd-lf;
+  &-pd-nav {
+    padding: 1.7rem $pd-lr;
     @media (min-width: 64em) {
-      padding: 2.5rem $pd-lf;
+      padding: 2.5rem $pd-lr;
     }
   }
-  &-pd-y {
-    padding-top: 5rem;
+  &-pd-hero {
+    padding: 0 $pd-lr 8rem $pd-lr;
+    @media (min-width: 64em) {
+      padding-top: 2.5rem;
+    }
+  }
+  &-pd-adv {
+    padding: 0 $pd-lr 0.063rem $pd-lr;
+    @media (min-width: 64em) {
+      padding-bottom: 2rem;
+    }
+  }
+  &-pd-boost {
+    padding: 5rem $pd-lr;
+    @media (min-width: 64em) {
+      padding: 3.5rem $pd-lr;
+    }
+  }
+  &-pd-footer {
+    padding: 3.5rem $pd-lr;
+    @media (min-width: 64em) {
+      padding: 4rem $pd-lr;
+    }
   }
 }

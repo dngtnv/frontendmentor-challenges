@@ -1,8 +1,21 @@
-@import '../../styles/colors';
-@import '../../styles/animation';
+@use '../../styles/colors' as *;
+@use '../../styles/animation' as *;
 
 header {
   position: relative;
+  .overlay {
+    position: fixed;
+    background: transparent;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+    z-index: 100;
+    &-visible {
+      visibility: visible;
+    }
+  }
   .top-nav {
     display: flex;
     justify-content: space-between;
@@ -12,12 +25,11 @@ header {
       align-items: center;
       justify-content: space-between;
       .logo {
-        margin-right: 2.5rem;
+        @media (min-width: 64em) {
+          margin-right: 2.5rem;
+        }
         img {
           display: block;
-          @media (max-width: 40em) {
-            width: 6.875rem;
-          }
         }
       }
       .desktop-nav-links {
@@ -25,17 +37,23 @@ header {
           margin: 0 0.938rem;
           font-weight: 700;
           color: $grayish-violet;
+          transition: all 0.4s ease;
+          &:hover {
+            color: $verydark-blue;
+          }
         }
       }
     }
     .header-toggle {
       span {
+        position: relative;
         background-color: $grayish-violet;
         display: block;
         height: 0.15rem;
         transform-origin: 0px 1px;
         transition: all 0.4s ease;
         width: 1.375rem;
+        z-index: 101;
         &:not(:last-child) {
           margin-bottom: 0.355rem;
         }
@@ -67,13 +85,33 @@ header {
       }
       .login-btn {
         color: $grayish-violet;
+        transition: all 0.4s ease;
+        &:hover {
+          color: $verydark-blue;
+        }
       }
       .signup-btn {
-        padding: 0.438rem 1.438rem;
+        position: relative;
+        padding: 0.438rem 1.5rem;
         margin-left: 2.5rem;
         background-color: $cyan;
         border-radius: 50px;
         color: #fff;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: inherit;
+          background-color: rgba(255, 255, 255, 0.4);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
       }
     }
   }
@@ -84,9 +122,10 @@ header {
     padding: 1.3rem;
     margin-top: 1.25rem;
     border-radius: 8px;
-    width: 85%;
+    width: 87%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 101;
 
     // &.open {
     //   @media (max-width: 40em) {
@@ -97,16 +136,34 @@ header {
     //   visibility: hidden;
     // }
     a {
+      font-size: 1.125rem; //18px
       display: block;
       color: #fff;
-      margin: 1.438rem 0;
+      margin: 1.5rem 0;
+      font-weight: 700;
     }
     .btn-bottom {
       border-top: 1px solid $grayish-violet;
       .signup-btn {
-        padding: 0.5rem 1.438rem;
+        position: relative;
+        padding: 0.625rem 1.25rem;
         background-color: $cyan;
         border-radius: 50px;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: inherit;
+          background-color: rgba(255, 255, 255, 0.4);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
       }
     }
   }

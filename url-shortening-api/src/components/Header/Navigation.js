@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../../images/logo.svg';
 import Burger from './Burger';
 import Menu from './Menu';
 
@@ -10,10 +11,11 @@ function Navigation() {
   };
   return (
     <>
+      <div className={`overlay ${status === 'open' ? 'overlay-visible' : ''}`} onClick={() => openMenu()}></div>
       <nav className="top-nav">
         <div className="left-side">
           <a href="/#" className="logo">
-            <img src="/images/logo.svg" alt="Shortly logo"></img>
+            <img src={logo} alt="Shortly logo"></img>
           </a>
           <div className="desktop-nav-links hide-for-mobile">
             <a href="#features">Features</a>
