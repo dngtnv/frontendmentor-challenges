@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroSection from './Hero/index';
-import AdvSection from './Advanced/index';
-import Boost from './Boost/index';
+import AdvSection from './Advanced/Index';
+import Boost from './Boost/Index';
+import HeroSection from './Hero/Index';
 
 function MainSection() {
   return (

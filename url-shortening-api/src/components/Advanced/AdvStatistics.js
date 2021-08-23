@@ -6,7 +6,7 @@ import fullyImg from '../../images/icon-fully-customizable.svg';
 export default function AdvStatistics() {
   return (
     <div className="adv-statistics">
-      <article className="descr">
+      <article className="description">
         <h2>Advanced Statistics</h2>
         <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </article>
