@@ -53,7 +53,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Links
 
 - Solution URL: [Link](https://your-solution-url.com)
-- Live Site URL: [Live](https://your-live-site-url.com)
+- Live Site URL: [Live](https://url-shortening-api.netlify.app)
 
 ## My process
 
