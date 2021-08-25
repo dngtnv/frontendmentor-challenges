@@ -52,7 +52,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Links
 
-- Solution URL: [Link](https://your-solution-url.com)
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/url-shortening-api-landing-page-using-react-and-scss-mobilefirst-fB1HjBruZ)
 - Live Site URL: [Live](https://url-shortening-api.netlify.app)
 
 ## My process
