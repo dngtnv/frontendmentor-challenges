@@ -4,14 +4,14 @@ import Burger from './Burger';
 import Menu from './Menu';
 
 function Navigation() {
-  const [status, setStatus] = useState('close');
+  const [isOpen, setIsOpen] = useState(null);
+
   const openMenu = () => {
-    //console.log(status);
-    return setStatus(status === 'open' ? 'close' : 'open');
+    setIsOpen(!isOpen);
   };
   return (
     <>
-      <div className={`overlay ${status === 'open' ? 'overlay-visible' : ''}`} onClick={() => openMenu()}></div>
+      <div className={`overlay ${isOpen ? 'overlay-visible' : ''}`} onClick={() => openMenu()}></div>
       <nav className="top-nav">
         <div className="left-side">
           <a href="/#" className="logo">
@@ -23,7 +23,7 @@ function Navigation() {
             <a href="#resources">Resources</a>
           </div>
         </div>
-        <Burger status={status} openMenu={openMenu} />
+        <Burger isOpen={isOpen} openMenu={openMenu} />
         <div className="right-side hide-for-mobile">
           <a href="/#" className="login-btn">
             Login
@@ -33,7 +33,7 @@ function Navigation() {
           </a>
         </div>
       </nav>
-      <Menu status={status} />
+      <Menu isOpen={isOpen} />
     </>
   );
 }

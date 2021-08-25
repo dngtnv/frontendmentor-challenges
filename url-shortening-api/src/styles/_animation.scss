@@ -23,12 +23,6 @@
   }
 }
 
-.slide-up {
-  animation: menuClose 0.4s ease forwards;
-}
-.slide-down {
-  animation: menuOpen 0.4s ease;
-}
 @keyframes menuOpen {
   from {
     visibility: hidden;
@@ -40,6 +34,7 @@
     opacity: 0;
   }
   to {
+    visibility: visible;
     margin-top: 1.25rem;
     opacity: 1;
   }

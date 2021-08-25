@@ -57,25 +57,16 @@ header {
         &:not(:last-child) {
           margin-bottom: 0.355rem;
         }
-
-        &.open:nth-child(1) {
+      }
+      &.open {
+        > span:nth-child(1) {
           transform: rotate(45deg) translate(2.5px, -2.5px);
         }
-        &.open:nth-child(2) {
+        > span:nth-child(2) {
           opacity: 0;
         }
-        &.open:nth-child(3) {
+        > span:nth-child(3) {
           transform: rotate(-45deg) translate(2px, 2px);
-        }
-
-        &.close:nth-child(1) {
-          transform: rotate(0) translateY(0);
-        }
-        &.close:nth-child(2) {
-          opacity: 1;
-        }
-        &.close:nth-child(3) {
-          transform: rotate(0) translateY(0);
         }
       }
     }
@@ -126,15 +117,14 @@ header {
     left: 50%;
     transform: translateX(-50%);
     z-index: 101;
+    visibility: hidden;
 
-    // &.open {
-    //   @media (max-width: 40em) {
-    //     display: block;
-    //   }
-    // }
-    // &.close {
-    //   visibility: hidden;
-    // }
+    &.open {
+      animation: menuOpen 0.4s ease forwards;
+    }
+    &.closed {
+      animation: menuClose 0.4s ease forwards;
+    }
     a {
       font-size: 1.125rem; //18px
       display: block;
