@@ -1,0 +1,19 @@
+@use '../../styles/colors' as *;
+
+.boost {
+  background: $dark-violet url('../../images/bg-boost-mobile.svg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media (min-width: 40em) {
+    background: $dark-violet url('../../images/bg-boost-desktop.svg') no-repeat;
+    background-size: cover;
+    background-position: center 45%;
+  }
+  .boost-section {
+    text-align: center;
+    h2 {
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+  }
+}
