@@ -3,7 +3,7 @@
 .map-wrapper {
   width: 100%;
   height: 100vh;
-  @media (min-width: 40em) {
+  @media (min-width: 60em) {
     height: calc(100vh - #{$headerHeight});
   }
   #map {

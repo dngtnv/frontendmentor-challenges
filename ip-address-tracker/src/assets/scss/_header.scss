@@ -78,7 +78,7 @@ header {
   .info-wrapper {
     position: absolute;
     width: min(76.875em, 88%);
-    z-index: 100;
+    z-index: 999;
     text-align: center;
     left: 50%;
     bottom: 0;

@@ -5,34 +5,39 @@ const ipAddress = document.querySelector('.ip-address');
 const loc = document.querySelector('.location');
 const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.isp');
+
+// Setting up the map
 const api_key = IPIFY_API_KEY;
+const access_token = MAPBOX_TOKEN;
+let marker;
+const tileUrl = `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${access_token}`;
+const attribution = '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/">Mapbox</a>';
 
-function searchTracker() {
-  let inputValue = addressInput.value.trim();
-  if (checkValidDomain(inputValue)) {
-    if (errorMess.classList.contains('visible')) {
-      errorMess.classList.remove('visible');
-    }
-    ipTracker(inputValue, 'domain');
-  } else if (checkValidIpv4(inputValue) || checkValidIpv6(inputValue)) {
-    if (errorMess.classList.contains('visible')) {
-      errorMess.classList.remove('visible');
-    }
-    ipTracker(inputValue);
-  } else {
-    errorMess.innerText = 'Please enter a valid IP';
-    errorMess.classList.add('visible');
+const streets = L.tileLayer(tileUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution }),
+  light = L.tileLayer(tileUrl, { id: 'mapbox/light-v10', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution }),
+  satellite = L.tileLayer(tileUrl, { id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution });
+const baseMaps = {
+  Streets: streets,
+  Light: light,
+  Satellite: satellite,
+};
+const mymap = L.map('map', { zoomControl: false, center: [16.075239, 108.224136], zoom: 13, layers: [streets] });
+L.control.layers(baseMaps, '', { position: 'bottomright' }).addTo(mymap);
+L.control.zoom({ position: 'bottomleft' }).addTo(mymap);
+
+function getMarker(info) {
+  const pos = [info.location.lat, info.location.lng];
+  const svgMarker = L.icon({
+    iconUrl: '../../../src/images/icon-location.svg',
+    iconAnchor: [23, 56],
+  });
+  if (marker) {
+    marker.remove();
   }
+  marker = L.marker(pos, { icon: svgMarker });
+  marker.addTo(mymap);
+  mymap.setView(pos, 16);
 }
-
-submitBtn.addEventListener('click', searchTracker);
-// Trigger button click on Enter key
-addressInput.addEventListener('keyup', function (e) {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-    submitBtn.click();
-  }
-});
 
 async function getDeviceAddress() {
   let response = await fetch(`https://api.ipify.org?format=json`);
@@ -76,45 +81,33 @@ async function ipTracker(value, typeRequest = 'ip') {
   }
 }
 
-// Create Map with Google Maps API
-
-let map, marker;
-
-function initMap() {
-  const pos = {
-    lat: 16.075239,
-    lng: 108.224136,
-  };
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: pos,
-    disableDefaultUI: true,
-    styles: mapstyles,
-  });
+function searchTracker() {
+  let inputValue = addressInput.value.trim();
+  if (checkValidDomain(inputValue)) {
+    if (errorMess.classList.contains('visible')) {
+      errorMess.classList.remove('visible');
+    }
+    ipTracker(inputValue, 'domain');
+  } else if (checkValidIpv4(inputValue) || checkValidIpv6(inputValue)) {
+    if (errorMess.classList.contains('visible')) {
+      errorMess.classList.remove('visible');
+    }
+    ipTracker(inputValue);
+  } else {
+    errorMess.innerText = 'Please enter a valid IP';
+    errorMess.classList.add('visible');
+  }
 }
 
-function getMarker(info) {
-  const pos = {
-    lat: info.location.lat,
-    lng: info.location.lng,
-  };
-  const svgMarker = {
-    path: 'M39.263 7.673c8.897 8.812 8.966 23.168.153 32.065l-.153.153L23 56 6.737 39.89C-2.16 31.079-2.23 16.723 6.584 7.826l.153-.152c9.007-8.922 23.52-8.922 32.526 0zM23 14.435c-5.211 0-9.436 4.185-9.436 9.347S17.79 33.128 23 33.128s9.436-4.184 9.436-9.346S28.21 14.435 23 14.435z',
-    // fillColor: 'black',
-    fillOpacity: 1,
-    strokeWeight: 0,
-    rotation: 0,
-    scale: 0.8,
-    anchor: new google.maps.Point(21, 46),
-  };
-  marker = new google.maps.Marker({
-    position: pos,
-    map: map,
-    icon: svgMarker,
-    // icon: '../../../src/images/icon-location.svg',
-  });
-  map.setCenter(pos);
-}
+submitBtn.addEventListener('click', searchTracker);
+
+// Trigger button click on Enter key
+addressInput.addEventListener('keyup', function (e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    submitBtn.click();
+  }
+});
 
 function checkValidIpv4(value) {
   const pattern = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;

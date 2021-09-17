@@ -10,7 +10,6 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -40,10 +39,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - SCSS
 - Javascript
-
-### Useful resources
-
-- [Maps Javascript Api](https://developers.google.com/maps/documentation/javascript/overview) - Google Maps Platform.
 
 ## Author
 

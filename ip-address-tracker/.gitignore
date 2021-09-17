@@ -16,7 +16,6 @@
 .env.local
 
 # dependencies
-.env
 /node_modules
 /src/design
 gulpfile.js
