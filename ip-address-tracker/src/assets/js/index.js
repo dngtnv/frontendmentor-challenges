@@ -7,9 +7,9 @@ const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.isp');
 
 // Setting up the map
-const api_key = IPIFY_API_KEY;
-const access_token = MAPBOX_TOKEN;
 let marker;
+const api_key = 'at_NV6KNutm5C29wr5oS76HFrgdWcSkH';
+const access_token = 'pk.eyJ1IjoiZG5ndG52IiwiYSI6ImNrdG84djdtdjBhZGIycXFpZmdra2Z6MDkifQ.XQMa9UGWKJXDNpB9LjK3Dg';
 const tileUrl = `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${access_token}`;
 const attribution = '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/">Mapbox</a>';
 
