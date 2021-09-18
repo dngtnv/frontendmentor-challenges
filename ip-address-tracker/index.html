@@ -28,39 +28,41 @@
     <link rel="stylesheet" href="./dist/assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="header-wrapper">
-        <h1 class="heading">IP Address Tracker</h1>
-        <div class="search-wrapper">
-          <input class="address-input" type="text" placeholder="Search for any IP address or domain" />
-          <button class="search-btn">
-            <img src="./images/icon-arrow.svg" alt="Search by IP or Domain" />
-          </button>
+    <main>
+      <section class="header">
+        <div class="header-wrapper">
+          <h1 class="heading">IP Address Tracker</h1>
+          <div class="search-wrapper">
+            <input class="address-input" type="text" placeholder="Search for any IP address or domain" />
+            <button class="search-btn">
+              <img src="./images/icon-arrow.svg" alt="Search by IP or Domain" />
+            </button>
+          </div>
+          <p class="error"></p>
+          <div class="info-wrapper">
+            <div class="info-box">
+              <h5 class="info-title">IP ADDRESS</h5>
+              <p class="info-text ip-address">-</p>
+            </div>
+            <div class="info-box">
+              <h5 class="info-title">LOCATION</h5>
+              <p class="info-text location">-</p>
+            </div>
+            <div class="info-box">
+              <h5 class="info-title">TIMEZONE</h5>
+              <p class="info-text timezone">-</p>
+            </div>
+            <div class="info-box">
+              <h5 class="info-title">ISP</h5>
+              <p class="info-text isp">-</p>
+            </div>
+          </div>
         </div>
-        <p class="error"></p>
-        <div class="info-wrapper">
-          <div class="info-box">
-            <h5 class="info-title">IP ADDRESS</h5>
-            <p class="info-text ip-address">-</p>
-          </div>
-          <div class="info-box">
-            <h5 class="info-title">LOCATION</h5>
-            <p class="info-text location">-</p>
-          </div>
-          <div class="info-box">
-            <h5 class="info-title">TIMEZONE</h5>
-            <p class="info-text timezone">-</p>
-          </div>
-          <div class="info-box">
-            <h5 class="info-title">ISP</h5>
-            <p class="info-text isp">-</p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section class="map-wrapper">
-      <div id="map"></div>
-    </section>
+      </section>
+      <section class="map-wrapper">
+        <div id="map"></div>
+      </section>
+    </main>
     <script src="./dist/assets/js/script.js" type="module"></script>
   </body>
 </html>
