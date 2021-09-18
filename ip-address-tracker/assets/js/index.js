@@ -13,9 +13,9 @@ const access_token = 'pk.eyJ1IjoiZG5ndG52IiwiYSI6ImNrdG84djdtdjBhZGIycXFpZmdra2Z
 const tileUrl = `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${access_token}`;
 const attribution = '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/">Mapbox</a>';
 
-const streets = L.tileLayer(tileUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution }),
-  light = L.tileLayer(tileUrl, { id: 'mapbox/light-v10', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution }),
-  satellite = L.tileLayer(tileUrl, { id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, maxZoom: 18, attribution: attribution });
+const streets = L.tileLayer(tileUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, minZoom: 1, maxZoom: 18, attribution: attribution }),
+  light = L.tileLayer(tileUrl, { id: 'mapbox/light-v10', tileSize: 512, zoomOffset: -1, minZoom: 1, maxZoom: 18, attribution: attribution }),
+  satellite = L.tileLayer(tileUrl, { id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, minZoom: 1, maxZoom: 18, attribution: attribution });
 const baseMaps = {
   Streets: streets,
   Light: light,
@@ -23,12 +23,11 @@ const baseMaps = {
 };
 const mymap = L.map('map', { zoomControl: false, center: [16.075239, 108.224136], zoom: 13, layers: [streets] });
 L.control.layers(baseMaps, '', { position: 'bottomright' }).addTo(mymap);
-L.control.zoom({ position: 'bottomleft' }).addTo(mymap);
 
 function getMarker(info) {
   const pos = [info.location.lat, info.location.lng];
   const svgMarker = L.icon({
-    iconUrl: '../../../src/images/icon-location.svg',
+    iconUrl: '../../../images/icon-location.svg',
     iconAnchor: [23, 56],
   });
   if (marker) {

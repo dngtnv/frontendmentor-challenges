@@ -6,8 +6,8 @@ const autoprefixer = require('autoprefixer');
 const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 
-const scssPath = 'src/assets/scss/*.scss';
-const jsPath = 'src/assets/js/*.js';
+const scssPath = 'assets/scss/*.scss';
+const jsPath = 'assets/js/*.js';
 const browsersync = require('browser-sync').create();
 
 // Sass Task
