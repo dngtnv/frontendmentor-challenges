@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Live](https://ip-tracker-dngtnv.netlify.app/)
+- Live Site URL: [Live](https://iptracker-dngtnv.netlify.app/)
 
 ## My process
 
