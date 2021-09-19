@@ -1,0 +1,65 @@
+body.light-theme {
+  background-color: var(--body-bg-light);
+  transition: background-color 0.4s linear;
+  .attribution {
+    color: var(--primary-text-light);
+  }
+  header {
+    transition: background-color 0.4s linear;
+    background-color: var(--top-bg-light);
+    .gray-blue {
+      color: var(--secondary-text-light);
+    }
+    .left-side {
+      color: var(--primary-text-light);
+    }
+    .right-side {
+      color: var(--secondary-text-light);
+      .switch {
+        .slider {
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .main-cards {
+    .social-media {
+      .card {
+        background-color: var(--card-bg-light);
+        &:hover {
+          background-color: #e1e3f0;
+        }
+        .user-id {
+          color: var(--secondary-text-light);
+        }
+        .stats {
+          color: var(--primary-text-light);
+        }
+        .followers {
+          color: var(--secondary-text-light);
+        }
+      }
+    }
+    .overview-today {
+      h2 {
+        color: var(--secondary-text-light);
+      }
+      .overview-card {
+        .card {
+          background-color: var(--card-bg-light);
+          h3 {
+            color: var(--secondary-text-light);
+          }
+          .stats {
+            color: var(--primary-text-light);
+          }
+          &:hover {
+            background-color: #e1e3f0;
+          }
+        }
+      }
+    }
+  }
+}

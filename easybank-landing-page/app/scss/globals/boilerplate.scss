@@ -1,0 +1,40 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--very-light-gray);
+  font-family: 'Public Sans', sans-serif;
+  font-size: 16px;
+  overflow-x: inherit;
+  &.noscroll {
+    @media (max-width: 64em) {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+}
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+
+  &.container-pd-all {
+    padding: 1.875rem 1.25rem;
+  }
+  &.container-pd-y {
+    padding: 5.5rem 1.25rem;
+  }
+  &.container-pd-nav {
+    padding: 0.938rem 1.25rem;
+  }
+}

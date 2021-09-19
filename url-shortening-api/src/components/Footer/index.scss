@@ -1,0 +1,103 @@
+@use '../../styles/colors' as *;
+
+.footer {
+  background-color: $verydark-violet;
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 64em) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .logo {
+      margin-bottom: 3rem;
+      img {
+        display: block;
+      }
+      @media (min-width: 64em) {
+        flex: 2;
+      }
+    }
+    .features {
+      @media (min-width: 64em) {
+        flex: 1;
+      }
+    }
+    .resources {
+      @media (min-width: 64em) {
+        flex: 1;
+      }
+    }
+    .company {
+      @media (min-width: 64em) {
+        flex: 1;
+      }
+    }
+    .footer-links {
+      text-align: center;
+      margin-bottom: 2rem;
+      @media (min-width: 64em) {
+        text-align: left;
+        margin-left: 2rem;
+        margin-bottom: 0;
+      }
+      h4 {
+        color: #fff;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        @media (min-width: 64em) {
+          font-size: 1rem;
+        }
+      }
+      a {
+        position: relative;
+        display: inline-block;
+        color: $gray;
+        font-size: 1.125rem;
+        line-height: 2.4rem;
+        transition: all 0.4s ease;
+        &::before {
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          left: 0;
+          bottom: 6px;
+          transform: scaleX(0);
+          background-color: $cyan;
+          transition: transform 0.4s ease;
+        }
+        &:hover {
+          color: $cyan;
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+        @media (min-width: 64em) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .footer-icons {
+      a {
+        margin: 0 1rem;
+        path {
+          transition: all 0.4s ease;
+        }
+        &:hover svg path {
+          fill: $cyan;
+        }
+      }
+    }
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    color: $gray;
+    a {
+      color: $cyan;
+    }
+  }
+}

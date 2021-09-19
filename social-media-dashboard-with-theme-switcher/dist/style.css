@@ -1,0 +1,533 @@
+body.light-theme {
+  background-color: var(--body-bg-light);
+  -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+
+body.light-theme .attribution {
+  color: var(--primary-text-light);
+}
+
+body.light-theme header {
+  -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+  background-color: var(--top-bg-light);
+}
+
+body.light-theme header .gray-blue {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme header .left-side {
+  color: var(--primary-text-light);
+}
+
+body.light-theme header .right-side {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme header .right-side .switch .slider::before {
+  background-color: #fff;
+}
+
+body.light-theme .main-cards .social-media .card {
+  background-color: var(--card-bg-light);
+}
+
+body.light-theme .main-cards .social-media .card:hover {
+  background-color: #e1e3f0;
+}
+
+body.light-theme .main-cards .social-media .card .user-id {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme .main-cards .social-media .card .stats {
+  color: var(--primary-text-light);
+}
+
+body.light-theme .main-cards .social-media .card .followers {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme .main-cards .overview-today h2 {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme .main-cards .overview-today .overview-card .card {
+  background-color: var(--card-bg-light);
+}
+
+body.light-theme .main-cards .overview-today .overview-card .card h3 {
+  color: var(--secondary-text-light);
+}
+
+body.light-theme .main-cards .overview-today .overview-card .card .stats {
+  color: var(--primary-text-light);
+}
+
+body.light-theme .main-cards .overview-today .overview-card .card:hover {
+  background-color: #e1e3f0;
+}
+
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --dark-toggle-start: hsl(210, 78%, 56%);
+  --dark-toggle-end: hsl(146, 68%, 55%);
+  --light-toggle: hsl(230, 22%, 74%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-start: hsl(37, 97%, 70%);
+  --instagram-end: hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --body-bg: hsl(230, 17%, 14%);
+  --top-bg: hsl(232, 19%, 15%);
+  --card-bg: hsl(228, 28%, 20%);
+  --primary-text: hsl(0, 0%, 100%);
+  --secondary-text: hsl(228, 34%, 66%);
+  --body-bg-light: hsl(0, 0%, 100%);
+  --top-bg-light: hsl(225, 100%, 98%);
+  --card-bg-light: hsl(227, 47%, 96%);
+  --primary-text-light: hsl(230, 17%, 14%);
+  --secondary-text-light: hsl(228, 12%, 44%);
+}
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 700;
+  background-color: var(--body-bg);
+}
+
+body .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+
+body .attribution a {
+  color: #3e52a3;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 40px 0 40px;
+}
+
+header {
+  width: 100%;
+  height: 230px;
+  background-color: var(--top-bg);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+header .top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+header .top-bar .gray-blue {
+  color: var(--secondary-text);
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+header .top-bar .left-side {
+  color: var(--primary-text);
+}
+
+header .top-bar .left-side h1 {
+  font-size: 2.3em;
+}
+
+header .top-bar .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .top-bar .right-side .switch {
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+}
+
+header .top-bar .right-side .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+header .top-bar .right-side .switch input:checked + .slider {
+  background: var(--light-toggle);
+}
+
+header .top-bar .right-side .switch input:checked + .slider::before {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+header .top-bar .right-side .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(var(--dark-toggle-start)), to(var(--dark-toggle-end)));
+  background: linear-gradient(to right, var(--dark-toggle-start), var(--dark-toggle-end));
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .top-bar .right-side .switch .slider::before {
+  position: absolute;
+  content: '';
+  height: 15px;
+  width: 15px;
+  left: 2.5px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: var(--top-bg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.main-cards {
+  position: relative;
+  top: -8rem;
+}
+
+.main-cards .social-media {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 25px;
+      grid-template-areas: 'fb tw ig yt';
+}
+
+.main-cards .social-media .card {
+  background-color: var(--card-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.main-cards .social-media .card:hover {
+  background-color: #343b56;
+}
+
+.main-cards .social-media .card .user-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--secondary-text);
+  margin-bottom: 15px;
+}
+
+.main-cards .social-media .card .user-id img {
+  margin-right: 5px;
+}
+
+.main-cards .social-media .card .stats {
+  font-size: 3.5rem;
+  color: var(--primary-text);
+}
+
+.main-cards .social-media .card .followers {
+  color: var(--secondary-text);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 100;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
+}
+
+.main-cards .social-media .facebook {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: fb;
+  border-top: 4px solid var(--facebook);
+}
+
+.main-cards .social-media .twitter {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: tw;
+  border-top: 4px solid var(--twitter);
+}
+
+.main-cards .social-media .instagram {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: ig;
+}
+
+.main-cards .social-media .instagram::before {
+  content: '';
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--instagram-start)), to(var(--instagram-end)));
+  background-image: linear-gradient(to right, var(--instagram-start), var(--instagram-end));
+}
+
+.main-cards .social-media .youtube {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: yt;
+  border-top: 4px solid var(--youTube);
+}
+
+.main-cards .overview-today h2 {
+  color: var(--primary-text);
+}
+
+.main-cards .overview-today .overview-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 25px;
+      grid-template-areas: 'box1 box2 box3 box4' 'box5 box6 box7 box8';
+  margin-top: 20px;
+}
+
+.main-cards .overview-today .overview-card .card {
+  background-color: var(--card-bg);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.main-cards .overview-today .overview-card .card:hover {
+  background-color: #343b56;
+}
+
+.main-cards .overview-today .overview-card .card h3 {
+  color: var(--secondary-text);
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.main-cards .overview-today .overview-card .card .stats {
+  color: var(--primary-text);
+  font-size: 2em;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.main-cards .overview-today .overview-card .card img,
+.main-cards .overview-today .overview-card .card .increase,
+.main-cards .overview-today .overview-card .card .decrease {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.main-cards .overview-today .overview-card .fb-page-views {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: box1;
+}
+
+.main-cards .overview-today .overview-card .fb-likes {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: box2;
+}
+
+.main-cards .overview-today .overview-card .ig-likes {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: box3;
+}
+
+.main-cards .overview-today .overview-card .ig-profile-views {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: box4;
+}
+
+.main-cards .overview-today .overview-card .tw-retweets {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: box5;
+}
+
+.main-cards .overview-today .overview-card .tw-likes {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: box6;
+}
+
+.main-cards .overview-today .overview-card .yt-likes {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: box7;
+}
+
+.main-cards .overview-today .overview-card .yt-total-views {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: box8;
+}
+
+.increase {
+  color: var(--lime-green);
+}
+
+.increase::before {
+  content: url(../images/icon-up.svg);
+  position: relative;
+  top: -0.2em;
+  left: -0.4em;
+}
+
+.decrease {
+  color: var(--bright-red);
+}
+
+.decrease::before {
+  content: url(../images/icon-down.svg);
+  position: relative;
+  top: -0.2em;
+  left: -0.4em;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-cards .social-media {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'fb tw' 'ig yt';
+  }
+  .main-cards .overview-today .overview-card {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'box1 box2' 'box3 box4' 'box5 box6' 'box7 box8';
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .top-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+  header .top-bar .left-side {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--secondary-text);
+    margin-bottom: 18px;
+  }
+  header .top-bar .right-side {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container {
+    width: 100%;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .main-cards {
+    top: -80px;
+    margin-top: 55px;
+  }
+  .main-cards .social-media {
+    margin-top: 40px;
+    padding-top: 0;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'fb' 'tw' 'ig' 'yt';
+  }
+  .main-cards .overview-today .overview-card {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'box1' 'box2' 'box3' 'box4' 'box5' 'box6' 'box7' 'box8';
+  }
+}
+/*# sourceMappingURL=style.css.map */
