@@ -1,0 +1,29 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  &.nav-open-noscroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+button {
+  font-family: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
