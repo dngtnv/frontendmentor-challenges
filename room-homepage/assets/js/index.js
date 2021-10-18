@@ -1,29 +1,20 @@
 const body = document.querySelector('body');
 const navLinks = document.querySelector('nav');
-const openBtn = document.querySelector('.open-btn');
-const closeBtn = document.querySelector('.close-btn');
-const overlay = document.querySelector('.hamburger-overlay');
-const heroBg = document.querySelector('.hero-bg');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
 const heroBackground = document.querySelector('.hero-bg');
 const slideItem = document.querySelectorAll('.slide-item');
-const heading = document.querySelector('.hero-heading');
-const text = document.querySelector('.hero-text');
-
 const background = ['hero_1', 'hero_2', 'hero_3'];
 
-openBtn.addEventListener('click', () => {
+document.querySelector('.open-btn').addEventListener('click', () => {
   navLinks.classList.add('open');
   overlay.classList.add('overlay_visible');
   body.classList.add('nav-open-noscroll');
 });
-closeBtn.addEventListener('click', () => {
+document.querySelector('.close-btn').addEventListener('click', () => {
   navLinks.removeAttribute('class');
   overlay.classList.remove('overlay_visible');
   body.removeAttribute('class');
 });
-overlay.addEventListener('click', () => {
+document.querySelector('.hamburger-overlay').addEventListener('click', () => {
   navLinks.removeAttribute('class');
   overlay.classList.remove('overlay_visible');
   body.removeAttribute('class');
@@ -69,10 +60,10 @@ const handleChange = direction => {
   });
 };
 
-prevBtn.addEventListener('click', () => {
+document.querySelector('.prev').addEventListener('click', () => {
   handleChange(-1);
 });
-nextBtn.addEventListener('click', () => {
+document.querySelector('.next').addEventListener('click', () => {
   handleChange(1);
 });
 
