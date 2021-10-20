@@ -1,53 +1,46 @@
 const body = document.querySelector('body');
 const navLinks = document.querySelector('nav');
 const overlay = document.querySelector('.hamburger-overlay');
-const heroBackground = document.querySelector('.hero-bg');
-const slideItem = document.querySelectorAll('.slide-item');
-const background = ['hero_1', 'hero_2', 'hero_3'];
+const slideBG = document.querySelector('.slide-bg');
+const slideText = document.querySelectorAll('.slide-item');
+let slideIndex = 1;
 let isMoving = false;
+
+moveSlides();
+function moveSlides() {
+  slideBG.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
 
 const handleChange = direction => {
   isMoving = true;
-  let index = 0;
-  let currentIndex = 0;
-  // Handle background changing
-  background.forEach(el => {
-    if (heroBackground.classList.contains(el)) {
-      currentIndex = background.indexOf(el);
-    }
-  });
-  if (direction === 1) {
-    index = (currentIndex + 1) % background.length;
-  } else {
-    currentIndex === 0 ? (index = background.length - 1) : (index = currentIndex - 1);
+  slideBG.style.transition = 'transform 400ms ease-in-out';
+  direction !== 'right' ? (slideIndex -= 1) : (slideIndex += 1);
+  moveSlides();
+};
+
+// Event listener
+slideBG.addEventListener('transitionend', () => {
+  isMoving = false;
+  const slidesArr = [...slideBG.querySelectorAll('.bg-img')];
+  if (slideIndex === 0) {
+    slideBG.style.transition = 'none';
+    slideIndex = slidesArr.length - 2;
+    moveSlides();
   }
-  heroBackground.classList.remove(background[currentIndex]);
-  heroBackground.classList.add(background[index]);
-  // Handle text changing
-  slideItem.forEach(el => {
-    let opacity = 0;
-    if (parseInt(el.dataset.index) === index) {
-      function fadeIn() {
-        if (opacity < 1) {
-          opacity += 0.5;
-          setTimeout(function () {
-            fadeIn();
-          }, 100);
-        }
-        el.style.opacity = opacity;
-      }
-      fadeIn();
+  if (slideIndex === slidesArr.length - 1) {
+    slideBG.style.transition = 'none';
+    slideIndex = 1;
+    moveSlides();
+  }
+  slideText.forEach(el => {
+    if (parseInt(el.dataset.index) === slideIndex) {
+      el.style.opacity = 1;
       el.classList.add('active-item');
     } else {
       el.classList.remove('active-item');
       el.removeAttribute('style');
     }
   });
-};
-
-// Event listener
-heroBackground.addEventListener('transitionend', () => {
-  isMoving = false;
 });
 
 document.querySelector('.prev').addEventListener('click', () => {
@@ -60,7 +53,7 @@ document.querySelector('.next').addEventListener('click', () => {
   if (isMoving) {
     return;
   }
-  handleChange(1);
+  handleChange('right');
 });
 
 // Navigate the slider using keyboard
@@ -73,7 +66,7 @@ window.addEventListener('keyup', e => {
       handleChange();
       break;
     case 'ArrowRight':
-      handleChange(1);
+      handleChange('right');
       break;
     default:
       break;

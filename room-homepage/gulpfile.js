@@ -15,7 +15,7 @@ function scssTask() {
   return src(scssPath, { sourcemaps: true })
     .pipe(sass())
     .pipe(concat('style.css'))
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer('last 2 versions'), cssnano()]))
     .pipe(dest('dist/assets/css', { sourcemaps: '.' }));
 }
 
