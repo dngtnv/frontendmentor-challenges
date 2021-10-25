@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/ip-address-tracker-using-scss-and-javascript-ohCF6kBE1)
 - Live Site URL: [Live](https://iptracker-dngtnv.netlify.app/)
 
 ## My process
