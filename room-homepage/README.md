@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/responsive-room-homepage-challenge-hub-using-css-grid-TYp5oEEgT)
 - Live Site URL: [Live](https://roomhomepage-dngtnv.netlify.app/)
 
 ## My process
