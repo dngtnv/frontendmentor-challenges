@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./dist/assets/css/style.css" />
-    <script src="./dist/assets/js/script.js" type="module" defer></script>
+    <script src="./dist/assets/js/script.js" defer></script>
   </head>
   <body data-nav-state="closed">
     <header>
       <div class="hamburger">
         <div class="hamburger-content">
-          <button class="hamburger-btn open-btn">
+          <button class="hamburger-btn open-btn" aria-label="Open menu">
             <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z" fill="#FFF" fill-rule="evenodd" />
             </svg>
@@ -32,7 +32,7 @@
             </svg>
           </a>
           <nav>
-            <button class="hamburger-btn close-btn">
+            <button class="hamburger-btn close-btn" aria-label="Close menu">
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
@@ -66,12 +66,12 @@
         </div>
         <div class="slide-hero-content flex-center">
           <div class="slider-btn-container">
-            <button class="prev">
+            <button class="prev" aria-label="Previous">
               <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd" />
               </svg>
             </button>
-            <button class="next">
+            <button class="next" aria-label="Next">
               <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd" />
               </svg>
