@@ -3,13 +3,14 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   height: 100vh;
   width: 100%;
   background-color: #ecf2f8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2348556a' fill-opacity='0.22'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 500;
   font-size: 13px;
@@ -21,11 +22,11 @@ body main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 body main .testimonials {
@@ -34,14 +35,21 @@ body main .testimonials {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 25px;
-      grid-template-areas: 'box1 box1 box2 box5' 'box3 box4 box4 box5';
+  grid-template-areas:
+    'box1 box1 box2 box5'
+    'box3 box4 box4 box5';
 }
 
-body main .testimonials .box, body main .testimonials .testim-box1, body main .testimonials .testim-box2, body main .testimonials .testim-box3, body main .testimonials .testim-box4, body main .testimonials .testim-box5 {
+body main .testimonials .box,
+body main .testimonials .testim-box1,
+body main .testimonials .testim-box2,
+body main .testimonials .testim-box3,
+body main .testimonials .testim-box4,
+body main .testimonials .testim-box5 {
   border-radius: 7px;
   padding: 25px;
   line-height: 1.5;
@@ -50,68 +58,103 @@ body main .testimonials .box, body main .testimonials .testim-box1, body main .t
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-shadow: 0 3px 10px #cccccc;
-          box-shadow: 0 3px 10px #cccccc;
+  box-shadow: 0 3px 10px #cccccc;
 }
 
-body main .testimonials .box .avatar, body main .testimonials .testim-box1 .avatar, body main .testimonials .testim-box2 .avatar, body main .testimonials .testim-box3 .avatar, body main .testimonials .testim-box4 .avatar, body main .testimonials .testim-box5 .avatar {
+body main .testimonials .box .avatar,
+body main .testimonials .testim-box1 .avatar,
+body main .testimonials .testim-box2 .avatar,
+body main .testimonials .testim-box3 .avatar,
+body main .testimonials .testim-box4 .avatar,
+body main .testimonials .testim-box5 .avatar {
   border: 2px solid #a775f1;
 }
 
-body main .testimonials .box .testim-box-header, body main .testimonials .testim-box1 .testim-box-header, body main .testimonials .testim-box2 .testim-box-header, body main .testimonials .testim-box3 .testim-box-header, body main .testimonials .testim-box4 .testim-box-header, body main .testimonials .testim-box5 .testim-box-header {
+body main .testimonials .box .testim-box-header,
+body main .testimonials .testim-box1 .testim-box-header,
+body main .testimonials .testim-box2 .testim-box-header,
+body main .testimonials .testim-box3 .testim-box-header,
+body main .testimonials .testim-box4 .testim-box-header,
+body main .testimonials .testim-box5 .testim-box-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 10px;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
 
-body main .testimonials .box .testim-box-header img, body main .testimonials .testim-box1 .testim-box-header img, body main .testimonials .testim-box2 .testim-box-header img, body main .testimonials .testim-box3 .testim-box-header img, body main .testimonials .testim-box4 .testim-box-header img, body main .testimonials .testim-box5 .testim-box-header img {
+body main .testimonials .box .testim-box-header img,
+body main .testimonials .testim-box1 .testim-box-header img,
+body main .testimonials .testim-box2 .testim-box-header img,
+body main .testimonials .testim-box3 .testim-box-header img,
+body main .testimonials .testim-box4 .testim-box-header img,
+body main .testimonials .testim-box5 .testim-box-header img {
   width: 40px;
   height: auto;
   border-radius: 50%;
   margin-right: 15px;
 }
 
-body main .testimonials .box .testim-box-header .verified, body main .testimonials .testim-box1 .testim-box-header .verified, body main .testimonials .testim-box2 .testim-box-header .verified, body main .testimonials .testim-box3 .testim-box-header .verified, body main .testimonials .testim-box4 .testim-box-header .verified, body main .testimonials .testim-box5 .testim-box-header .verified {
+body main .testimonials .box .testim-box-header .verified,
+body main .testimonials .testim-box1 .testim-box-header .verified,
+body main .testimonials .testim-box2 .testim-box-header .verified,
+body main .testimonials .testim-box3 .testim-box-header .verified,
+body main .testimonials .testim-box4 .testim-box-header .verified,
+body main .testimonials .testim-box5 .testim-box-header .verified {
   opacity: 50%;
 }
 
-body main .testimonials .box .testim-box-content, body main .testimonials .testim-box1 .testim-box-content, body main .testimonials .testim-box2 .testim-box-content, body main .testimonials .testim-box3 .testim-box-content, body main .testimonials .testim-box4 .testim-box-content, body main .testimonials .testim-box5 .testim-box-content {
+body main .testimonials .box .testim-box-content,
+body main .testimonials .testim-box1 .testim-box-content,
+body main .testimonials .testim-box2 .testim-box-content,
+body main .testimonials .testim-box3 .testim-box-content,
+body main .testimonials .testim-box4 .testim-box-content,
+body main .testimonials .testim-box5 .testim-box-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
-body main .testimonials .box .testim-box-content .title, body main .testimonials .testim-box1 .testim-box-content .title, body main .testimonials .testim-box2 .testim-box-content .title, body main .testimonials .testim-box3 .testim-box-content .title, body main .testimonials .testim-box4 .testim-box-content .title, body main .testimonials .testim-box5 .testim-box-content .title {
+body main .testimonials .box .testim-box-content .title,
+body main .testimonials .testim-box1 .testim-box-content .title,
+body main .testimonials .testim-box2 .testim-box-content .title,
+body main .testimonials .testim-box3 .testim-box-content .title,
+body main .testimonials .testim-box4 .testim-box-content .title,
+body main .testimonials .testim-box5 .testim-box-content .title {
   height: 67.2px;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   margin-bottom: 10px;
 }
 
-body main .testimonials .box .testim-box-content .content, body main .testimonials .testim-box1 .testim-box-content .content, body main .testimonials .testim-box2 .testim-box-content .content, body main .testimonials .testim-box3 .testim-box-content .content, body main .testimonials .testim-box4 .testim-box-content .content, body main .testimonials .testim-box5 .testim-box-content .content {
+body main .testimonials .box .testim-box-content .content,
+body main .testimonials .testim-box1 .testim-box-content .content,
+body main .testimonials .testim-box2 .testim-box-content .content,
+body main .testimonials .testim-box3 .testim-box-content .content,
+body main .testimonials .testim-box4 .testim-box-content .content,
+body main .testimonials .testim-box5 .testim-box-content .content {
   opacity: 70%;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 body main .testimonials .testim-box1 {
@@ -179,12 +222,20 @@ body main .testimonials .testim-box5 {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: 'box1 box1 box2' 'box3 box4 box4' 'box5 box5 box5';
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      'box1 box1 box2'
+      'box3 box4 box4'
+      'box5 box5 box5';
   }
-  body main .testimonials .box .testim-box-content .title, body main .testimonials .testim-box1 .testim-box-content .title, body main .testimonials .testim-box2 .testim-box-content .title, body main .testimonials .testim-box3 .testim-box-content .title, body main .testimonials .testim-box4 .testim-box-content .title, body main .testimonials .testim-box5 .testim-box-content .title {
+  body main .testimonials .box .testim-box-content .title,
+  body main .testimonials .testim-box1 .testim-box-content .title,
+  body main .testimonials .testim-box2 .testim-box-content .title,
+  body main .testimonials .testim-box3 .testim-box-content .title,
+  body main .testimonials .testim-box4 .testim-box-content .title,
+  body main .testimonials .testim-box5 .testim-box-content .title {
     height: unset;
   }
   body main .testimonials .testim-box1 {
@@ -238,12 +289,22 @@ body main .testimonials .testim-box5 {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 3fr;
-        grid-template-columns: 3fr;
+    grid-template-columns: 3fr;
     -ms-grid-rows: 0.9fr 0.5fr 0.5fr 0.9fr 1fr;
-        grid-template-rows: 0.9fr 0.5fr 0.5fr 0.9fr 1fr;
-        grid-template-areas: 'box1' 'box2' 'box3' 'box4' 'box5';
+    grid-template-rows: 0.9fr 0.5fr 0.5fr 0.9fr 1fr;
+    grid-template-areas:
+      'box1'
+      'box2'
+      'box3'
+      'box4'
+      'box5';
   }
-  body main .testimonials .box .testim-box-content .title, body main .testimonials .testim-box1 .testim-box-content .title, body main .testimonials .testim-box2 .testim-box-content .title, body main .testimonials .testim-box3 .testim-box-content .title, body main .testimonials .testim-box4 .testim-box-content .title, body main .testimonials .testim-box5 .testim-box-content .title {
+  body main .testimonials .box .testim-box-content .title,
+  body main .testimonials .testim-box1 .testim-box-content .title,
+  body main .testimonials .testim-box2 .testim-box-content .title,
+  body main .testimonials .testim-box3 .testim-box-content .title,
+  body main .testimonials .testim-box4 .testim-box-content .title,
+  body main .testimonials .testim-box5 .testim-box-content .title {
     height: unset;
   }
   body main .testimonials .testim-box1 {
