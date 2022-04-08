@@ -1,0 +1,25 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.top-image {
+  background: hsl(0, 0%, 98%) url('../images/bg-desktop-light.jpg') no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 19.5em;
+}
