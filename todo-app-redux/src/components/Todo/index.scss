@@ -1,0 +1,40 @@
+@use '../../assets/styles/variables' as *;
+
+.new-todo {
+  background-color: var(--form-bg);
+  height: 3.8rem;
+  border-radius: 6px;
+  display: flex;
+  margin-top: 1.5rem;
+  .check {
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .check-mark {
+      width: 23px;
+      height: 23px;
+      border: 2px solid var(--accent3);
+      border-radius: 50%;
+    }
+  }
+  .todo-input {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    form {
+      flex-grow: inherit;
+      input {
+        width: 100%;
+        padding: 10px 0;
+        outline: none;
+        border: none;
+        background-color: var(--form-bg);
+        font-family: inherit;
+        font-size: 18px;
+        color: var(--text);
+        caret-color: var(--bright-blue);
+      }
+    }
+  }
+}
