@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import ItemInfo from './Info/index';
+import Info from './Info';
 import Todo from './Todo';
 
 export default function index({ todoList, onCheckTodo, onRemoveTodo }) {
@@ -11,7 +11,7 @@ export default function index({ todoList, onCheckTodo, onRemoveTodo }) {
           <Todo key={todo.id} todo={todo} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} />
         ))}
       </div>
-      <ItemInfo />
+      <Info />
     </div>
   );
 }

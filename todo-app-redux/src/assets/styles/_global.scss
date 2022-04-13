@@ -84,24 +84,32 @@ body {
 .container {
   .cover-image {
     position: absolute;
-    height: 320px;
+    height: 310px;
     width: 100%;
     z-index: -1;
+    @media (max-width: 26em) {
+      height: 260px;
+    }
   }
   .cover-image[cover-theme='dark'] {
-    background: url('../images/bg-desktop-dark.jpg') no-repeat;
-    background-position: center top;
-    background-size: cover;
+    background: url('../images/bg-desktop-dark.jpg') no-repeat center / cover;
+    @media (max-width: 26em) {
+      background: url('../images/bg-mobile-dark.jpg') no-repeat left / cover;
+    }
   }
   .cover-image[cover-theme='light'] {
-    background: url('../images/bg-desktop-light.jpg') no-repeat;
-    background-position: center top;
-    background-size: cover;
+    background: url('../images/bg-desktop-light.jpg') no-repeat center/cover;
+    @media (max-width: 26em) {
+      background: url('../images/bg-mobile-light.jpg') no-repeat left/cover;
+    }
   }
   .main {
-    max-width: 36rem;
+    width: min(87%, 36rem);
     margin: 0 auto;
     padding-top: 3.8rem;
+    @media (max-width: 26em) {
+      padding-top: 2.3rem;
+    }
     .header {
       display: flex;
       align-items: center;
@@ -110,6 +118,10 @@ body {
         color: hsl(0, 0%, 100%);
         h1 {
           letter-spacing: 15px;
+          @media (max-width: 26em) {
+            font-size: 34px;
+            letter-spacing: 14px;
+          }
         }
       }
       .theme {
@@ -164,6 +176,9 @@ body {
       font-size: 14px;
       text-align: center;
       margin-top: 3rem;
+      @media (max-width: 26em) {
+        margin-top: 8rem;
+      }
     }
   }
 }

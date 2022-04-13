@@ -13,7 +13,6 @@ function App() {
     const storagedTodoList = localStorage.getItem('TODO_LIST');
     if (storagedTodoList) {
       setTodoList(JSON.parse(storagedTodoList));
-      console.log(storagedTodoList);
     }
   }, []);
   useEffect(() => {
@@ -70,7 +69,7 @@ function App() {
             <h1>TODO</h1>
           </div>
           <div className="theme">
-            <button className="switch-theme" onClick={() => switchTheme()}>
+            <button className="switch-theme" onClick={switchTheme}>
               {theme === 'light' ? <img src={moonIcon} alt="moon" /> : <img src={sunIcon} alt="sun" />}
             </button>
           </div>

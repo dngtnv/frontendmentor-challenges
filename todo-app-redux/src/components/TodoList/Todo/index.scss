@@ -49,7 +49,7 @@
     .todo-text {
       display: flex;
       align-items: center;
-      flex-grow: 1;
+      flex: 1;
       color: var(--text);
       font-family: 'Josefin Sans', sans-serif;
       &:hover {
@@ -79,6 +79,9 @@
       width: 60px;
       visibility: hidden;
       cursor: pointer;
+      @media (max-width: 26em) {
+        visibility: visible;
+      }
     }
     &:hover {
       .remove-todo {
