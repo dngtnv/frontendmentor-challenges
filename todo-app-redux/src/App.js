@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { v4 } from 'uuid';
 import './App.scss';
 import moonIcon from './assets/images/icon-moon.svg';
@@ -47,7 +47,6 @@ function App() {
       })
     );
   }, []);
-
   let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   if (localStorage.getItem('theme')) {
     currentTheme = localStorage.getItem('theme');
@@ -59,6 +58,9 @@ function App() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+  };
+  const clearCompleted = () => {
+    setTodoList(prevState => prevState.filter(todo => todo.isCompleted === false));
   };
   return (
     <div className="container">
@@ -84,7 +86,7 @@ function App() {
             </form>
           </div>
         </div>
-        <TodoList todoList={todoList} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} />
+        <TodoList todoList={todoList} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} clearCompleted={clearCompleted} />
         <div className="notice">Drag and drop to reorder list</div>
       </div>
     </div>

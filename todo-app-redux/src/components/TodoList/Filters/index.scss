@@ -38,8 +38,10 @@
         padding: 0 14px;
         font-size: 16px;
       }
-      &:hover:not(.active) {
-        color: var(--text-hover);
+      @media (hover: hover) and (pointer: fine) {
+        &:hover:not(.active) {
+          color: var(--text-hover);
+        }
       }
     }
     .active {
@@ -50,8 +52,10 @@
   .items-clear {
     cursor: pointer;
     transition: all 0.4s ease;
-    &:hover {
-      color: var(--text-hover);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--text-hover);
+      }
     }
   }
 }

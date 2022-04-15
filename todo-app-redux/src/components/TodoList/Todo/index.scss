@@ -2,7 +2,8 @@
 
 .todo-items {
   .todo-item {
-    height: 3.8rem;
+    // height: 3.8rem;
+    padding: 18px 0;
     display: flex;
     border-bottom: 1.5px solid var(--accent3);
     .check {
@@ -23,6 +24,7 @@
         background-clip: padding-box;
         border: $border solid transparent;
         border-radius: 50%;
+        cursor: pointer;
         img {
           display: none;
         }
@@ -38,11 +40,10 @@
           border-radius: inherit;
           background: var(--accent3);
         }
-        &:hover {
-          cursor: pointer;
-        }
-        &:hover::before {
-          background: linear-gradient(130deg, $check-bg-from, $check-bg-to);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover::before {
+            background: linear-gradient(130deg, $check-bg-from, $check-bg-to);
+          }
         }
       }
     }
@@ -52,9 +53,7 @@
       flex: 1;
       color: var(--text);
       font-family: 'Josefin Sans', sans-serif;
-      &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
     &.checked {
       .check-mark {

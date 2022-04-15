@@ -107,6 +107,7 @@ body {
     width: min(87%, 36rem);
     margin: 0 auto;
     padding-top: 3.8rem;
+    min-width: 15rem;
     @media (max-width: 26em) {
       padding-top: 2.3rem;
     }
@@ -158,7 +159,7 @@ body {
           flex-grow: inherit;
           input {
             width: 100%;
-            padding: 10px 0;
+            padding: 10px 15px 10px 0;
             outline: none;
             border: none;
             background-color: var(--form-bg);
