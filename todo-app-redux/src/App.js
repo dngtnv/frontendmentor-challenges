@@ -62,6 +62,13 @@ function App() {
   const clearCompleted = () => {
     setTodoList(prevState => prevState.filter(todo => todo.isCompleted === false));
   };
+  const handleOnDragEnd = result => {
+    if (!result.destination) return;
+    const items = Array.from(todoList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setTodoList(items);
+  };
   return (
     <div className="container">
       <div className="cover-image" cover-theme={theme}></div>
@@ -86,7 +93,13 @@ function App() {
             </form>
           </div>
         </div>
-        <TodoList todoList={todoList} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} clearCompleted={clearCompleted} />
+        <TodoList
+          todoList={todoList}
+          onCheckTodo={onCheckTodo}
+          onRemoveTodo={onRemoveTodo}
+          clearCompleted={clearCompleted}
+          handleOnDragEnd={handleOnDragEnd}
+        />
         <div className="notice">Drag and drop to reorder list</div>
       </div>
     </div>

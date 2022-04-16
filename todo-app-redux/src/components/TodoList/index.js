@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Filters from './Filters';
 import './index.scss';
 import Todo from './Todo';
 
-export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCompleted }) {
+export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCompleted, handleOnDragEnd }) {
   const [list, setList] = useState([]);
   const [currentFilter, setCurrentFilter] = useState('all');
 
@@ -40,12 +41,27 @@ export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCom
     }
   };
   return (
-    <div className="todo-items-wrapper">
-      <div className="todo-items">
-        {list.map(todo => (
-          <Todo key={todo.id} todo={todo} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} />
-        ))}
-      </div>
+    <div className="todo-list-wrapper">
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId="todos">
+          {provided => {
+            return (
+              <ul className="todo-items" {...provided.droppableProps} ref={provided.innerRef}>
+                {list.map((todo, index) => (
+                  <Draggable key={todo.id} draggableId={todo.id} index={index}>
+                    {provided => {
+                      return (
+                        <Todo todo={todo} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} provided={provided} innerRef={provided.innerRef} />
+                      );
+                    }}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </ul>
+            );
+          }}
+        </Droppable>
+      </DragDropContext>
       <Filters countTodoLeft={countTodoLeft} currentFilter={currentFilter} filterTodo={filterTodo} clearCompleted={clearCompleted} />
     </div>
   );
