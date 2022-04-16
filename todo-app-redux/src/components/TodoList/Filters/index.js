@@ -4,7 +4,7 @@ import './index.scss';
 export default function Info({ countTodoLeft, currentFilter, filterTodo, clearCompleted }) {
   return (
     <div className="todo-items-info">
-      <div className="items-left">{countTodoLeft} items left</div>
+      <div className="items-left">{countTodoLeft > 1 ? `${countTodoLeft} items left` : `${countTodoLeft} item left`}</div>
       <div className="items-filters">
         <span className={currentFilter === 'all' ? 'active' : ''} onClick={() => filterTodo('all')}>
           All

@@ -3,9 +3,14 @@ import checkIcon from '../../../assets/images/icon-check.svg';
 import crossIcon from '../../../assets/images/icon-cross.svg';
 import './index.scss';
 
-export default function Todo({ todo, onCheckTodo, onRemoveTodo }) {
+export default function Todo({ todo, onCheckTodo, onRemoveTodo, provided, innerRef }) {
   return (
-    <div className={`todo-item ${todo.isCompleted === true ? 'checked' : ''}`}>
+    <li
+      className={`todo-item ${todo.isCompleted === true ? 'checked' : ''}`}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+      ref={innerRef}
+    >
       <div className="check">
         <div className="check-mark" onClick={() => onCheckTodo(todo.id)}>
           <img src={checkIcon} alt="check" />
@@ -15,6 +20,6 @@ export default function Todo({ todo, onCheckTodo, onRemoveTodo }) {
       <div className="remove-todo" onClick={() => onRemoveTodo(todo.id)}>
         <img src={crossIcon} alt="remove todo" />
       </div>
-    </div>
+    </li>
   );
 }

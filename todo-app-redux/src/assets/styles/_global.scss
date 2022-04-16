@@ -84,7 +84,7 @@ body {
 .container {
   .cover-image {
     position: absolute;
-    height: 310px;
+    height: 305px;
     width: 100%;
     z-index: -1;
     @media (max-width: 26em) {
@@ -106,7 +106,7 @@ body {
   .main {
     width: min(87%, 36rem);
     margin: 0 auto;
-    padding-top: 3.8rem;
+    padding-top: 3.5rem;
     min-width: 15rem;
     @media (max-width: 26em) {
       padding-top: 2.3rem;
