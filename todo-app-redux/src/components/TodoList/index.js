@@ -1,40 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { useDispatch } from 'react-redux';
+import { filterChange } from '../../redux/actions.js';
 import Filters from './Filters';
 import './index.scss';
 import Todo from './Todo';
 
-export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCompleted, handleOnDragEnd }) {
-  const [list, setList] = useState([]);
-  const [currentFilter, setCurrentFilter] = useState('all');
+export default function TodoList({ todoList, handleOnDragEnd }) {
+  const [filter, setFilter] = useState('all');
+  const dispatch = useDispatch();
 
-  const countTodoLeft = todoList.filter(todo => todo.isCompleted === false).length;
-  const activeList = todoList.filter(todo => todo.isCompleted === false);
-  const completedList = todoList.filter(todo => todo.isCompleted === true);
+  const countTodoLeft = todoList.filter(todo => todo.completed === false).length;
 
   useEffect(() => {
-    if (currentFilter === 'all') {
-      setList(todoList);
-    } else if (currentFilter === 'active') {
-      setList(activeList);
-    } else {
-      setList(completedList);
-    }
-  }, [activeList, todoList, completedList, currentFilter]);
+    dispatch(filterChange(filter));
+  }, [filter, dispatch]);
 
   const filterTodo = filter => {
     switch (filter) {
       case 'all':
-        setCurrentFilter('all');
-        setList(todoList);
+        setFilter('all');
         break;
       case 'active':
-        setCurrentFilter('active');
-        setList(activeList);
+        setFilter('active');
         break;
       case 'completed':
-        setCurrentFilter('completed');
-        setList(completedList);
+        setFilter('completed');
         break;
       default:
         break;
@@ -47,12 +38,10 @@ export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCom
           {provided => {
             return (
               <ul className="todo-items" {...provided.droppableProps} ref={provided.innerRef}>
-                {list.map((todo, index) => (
+                {todoList.map((todo, index) => (
                   <Draggable key={todo.id} draggableId={todo.id} index={index}>
                     {provided => {
-                      return (
-                        <Todo todo={todo} onCheckTodo={onCheckTodo} onRemoveTodo={onRemoveTodo} provided={provided} innerRef={provided.innerRef} />
-                      );
+                      return <Todo todo={todo} provided={provided} innerRef={provided.innerRef} />;
                     }}
                   </Draggable>
                 ))}
@@ -62,7 +51,7 @@ export default function TodoList({ todoList, onCheckTodo, onRemoveTodo, clearCom
           }}
         </Droppable>
       </DragDropContext>
-      <Filters countTodoLeft={countTodoLeft} currentFilter={currentFilter} filterTodo={filterTodo} clearCompleted={clearCompleted} />
+      <Filters countTodoLeft={countTodoLeft} filter={filter} filterTodo={filterTodo} />
     </div>
   );
 }
