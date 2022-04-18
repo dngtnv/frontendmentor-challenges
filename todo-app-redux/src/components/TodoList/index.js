@@ -39,7 +39,7 @@ export default function TodoList({ todoList, handleOnDragEnd }) {
             return (
               <ul className="todo-items" {...provided.droppableProps} ref={provided.innerRef}>
                 {todoList.map((todo, index) => (
-                  <Draggable key={todo.id} draggableId={todo.id} index={index}>
+                  <Draggable key={todo.id} draggableId={todo.id} index={index} isDragDisabled={filter === 'all' ? false : true}>
                     {provided => {
                       return <Todo todo={todo} provided={provided} innerRef={provided.innerRef} />;
                     }}
