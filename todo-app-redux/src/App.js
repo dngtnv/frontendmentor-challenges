@@ -1,52 +1,53 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { v4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import { v4 as id } from 'uuid';
 import './App.scss';
 import moonIcon from './assets/images/icon-moon.svg';
 import sunIcon from './assets/images/icon-sun.svg';
 import TodoList from './components/TodoList';
+import { addTodo, replaceList } from './redux/actions';
+import { todoSelector } from './redux/selectors';
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [textInput, setTextInput] = useState('');
+  const dispatch = useDispatch();
+  const [todoInput, setTodoInput] = useState('');
+  const todoList = useSelector(todoSelector);
 
   useEffect(() => {
     const storagedTodoList = localStorage.getItem('TODO_LIST');
     if (storagedTodoList) {
-      setTodoList(JSON.parse(storagedTodoList));
+      dispatch(replaceList(JSON.parse(storagedTodoList)));
     }
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     localStorage.setItem('TODO_LIST', JSON.stringify(todoList));
   }, [todoList]);
 
-  const onTextInputChange = useCallback(e => {
-    setTextInput(e.target.value);
+  const onTodoInputChange = useCallback(e => {
+    setTodoInput(e.target.value);
   }, []);
 
   const onEnterPress = useCallback(
     e => {
       if (e.key === 'Enter') {
-        if (textInput === '') {
+        if (todoInput === '') {
           e.preventDefault();
         } else {
           e.preventDefault();
-          setTodoList([{ id: v4(), name: textInput, isCompleted: false }, ...todoList]);
-          setTextInput('');
+          dispatch(
+            addTodo({
+              id: id(),
+              name: todoInput,
+              completed: false,
+            })
+          );
+          setTodoInput('');
         }
       }
     },
-    [textInput, todoList]
+    [dispatch, todoInput]
   );
-  const onCheckTodo = useCallback(id => {
-    setTodoList(prevState => prevState.map(todo => (todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo)));
-  }, []);
-  const onRemoveTodo = useCallback(id => {
-    setTodoList(prevState =>
-      prevState.filter(todo => {
-        return todo.id !== id;
-      })
-    );
-  }, []);
+
   let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   if (localStorage.getItem('theme')) {
     currentTheme = localStorage.getItem('theme');
@@ -59,15 +60,12 @@ function App() {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   };
-  const clearCompleted = () => {
-    setTodoList(prevState => prevState.filter(todo => todo.isCompleted === false));
-  };
   const handleOnDragEnd = result => {
     if (!result.destination) return;
     const items = Array.from(todoList);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-    setTodoList(items);
+    dispatch(replaceList(items));
   };
   return (
     <div className="container">
@@ -89,17 +87,11 @@ function App() {
           </div>
           <div className="todo-input">
             <form>
-              <input type="text" placeholder="Create a new todo..." value={textInput} onChange={onTextInputChange} onKeyPress={onEnterPress} />
+              <input type="text" placeholder="Create a new todo..." value={todoInput} onChange={onTodoInputChange} onKeyPress={onEnterPress} />
             </form>
           </div>
         </div>
-        <TodoList
-          todoList={todoList}
-          onCheckTodo={onCheckTodo}
-          onRemoveTodo={onRemoveTodo}
-          clearCompleted={clearCompleted}
-          handleOnDragEnd={handleOnDragEnd}
-        />
+        <TodoList todoList={todoList} handleOnDragEnd={handleOnDragEnd} />
         <div className="notice">Drag and drop to reorder list</div>
       </div>
     </div>
