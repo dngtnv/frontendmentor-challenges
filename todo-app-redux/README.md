@@ -55,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/todo-app-using-reactredux-core-r1ZO9IKH5)
 - Live Site URL: [Demo](https://todoapp-redux-dngtnv.netlify.app/)
 
 ## My process
